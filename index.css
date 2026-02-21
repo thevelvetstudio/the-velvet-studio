@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-padding-top: 80px;
+  }
+  body {
+    @apply font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  /* Custom Scrollbar */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #050202;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #800020;
+    border-radius: 4px;
+  }
+
+  /* Checkbox styling support */
+  .custom-checkbox:checked::after {
+    content: '\e5ca';
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a0505;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

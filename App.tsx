@@ -153,11 +153,11 @@ function App() {
                 <div className="flex flex-col md:flex-row items-center gap-0.5 md:gap-2 lg:gap-4">
                     <button 
                         onClick={handleShare}
-                        className="flex items-center justify-center text-gray-300 hover:text-accent transition-colors p-1 lg:p-2 rounded-full hover:bg-white/5"
+                        className="-mt-1 md:mt-0 flex items-center justify-center text-gray-300 hover:text-accent transition-colors p-1 lg:p-2 rounded-full hover:bg-white/5"
                         title="Compartir página"
                         aria-label="Compartir página"
                     >
-                        <span className="material-symbols-outlined text-[16px] sm:text-[20px] lg:text-[24px] leading-none">share</span>
+                        <span className="material-symbols-outlined text-[18px] sm:text-[20px] lg:text-[24px] leading-none">share</span>
                     </button>
                     <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[10px] sm:text-xs lg:text-sm font-bold shadow-lg whitespace-nowrap">
                         <span>Únete</span>

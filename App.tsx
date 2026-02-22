@@ -117,8 +117,8 @@ function App() {
 
       {/* Header */}
       <div className="fixed top-0 z-50 w-full border-b border-[#800020]/20 bg-[#050202]/90 backdrop-blur-md">
-        <div className="flex h-20 items-center justify-between px-6 lg:px-12 max-w-7xl mx-auto">
-            <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row h-auto md:h-20 items-center justify-between px-3 sm:px-6 lg:px-12 max-w-7xl mx-auto pt-2 pb-1 md:py-0 gap-1 md:gap-0">
+            <div className="flex items-center gap-3 shrink-0 self-start md:self-auto">
     {/* Envolvemos todo en un enlace para que sea clickable */}
     <a 
         href="#top" 
@@ -126,7 +126,7 @@ function App() {
         className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
     >
         {/* Nuevo Logo Header */}
-        <div className="flex items-center justify-center size-10 overflow-hidden rounded-full">
+        <div className="flex items-center justify-center size-8 sm:size-10 overflow-hidden rounded-full">
             <img 
                 src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771387670/android-chrome-512x512_ksllge.png" 
                 alt="The Velvet Studio" 
@@ -134,58 +134,38 @@ function App() {
             />
         </div>
 
-        {/* Bloque de Texto */}
-        <div className="flex flex-col mt-3">
-            <h2 className="text-white text-lg font-bold tracking-tight font-brand leading-none">THE VELVET</h2>
-            <span className="text-accent text-[8px] tracking-[0.3em] uppercase font-display">Studio</span>
+        {/* Bloque de Texto - Visible en todas las pantallas */}
+        <div className="flex flex-col justify-center mt-[10px]">
+            <h2 className="text-white text-base md:text-lg font-bold tracking-tight font-brand leading-none">THE VELVET</h2>
+            <span className="text-accent text-[7px] md:text-[8px] tracking-[0.3em] uppercase font-display">Studio</span>
         </div>
     </a>
 </div>
             
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-8">
-                <nav className="flex gap-6">
-                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-gray-300 hover:text-accent transition-colors text-sm font-medium">Inicio</a>
-                    <a href="#" onClick={openAboutModal} className="text-gray-300 hover:text-accent transition-colors text-sm font-medium">Nosotros</a>
-                    <a href="#security" onClick={(e) => scrollToSection(e, 'security')} className="text-gray-300 hover:text-accent transition-colors text-sm font-medium">Seguridad</a>
-                    <a href="#earnings" onClick={(e) => scrollToSection(e, 'earnings')} className="text-gray-300 hover:text-accent transition-colors text-sm font-medium">Ganancias</a>
-                    <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-gray-300 hover:text-accent transition-colors text-sm font-medium">Contáctanos</a>
+            {/* Nav - Visible en todas las pantallas */}
+            <div className="flex items-center gap-1.5 sm:gap-4 lg:gap-8 w-full md:w-auto justify-between md:justify-end">
+                <nav className="flex gap-2.5 sm:gap-3 lg:gap-6 pl-2 md:pl-0">
+                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Inicio</a>
+                    <a href="#" onClick={openAboutModal} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Nosotros</a>
+                    <a href="#security" onClick={(e) => scrollToSection(e, 'security')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Seguridad</a>
+                    <a href="#earnings" onClick={(e) => scrollToSection(e, 'earnings')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Ganancias</a>
+                    <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Contacto</a>
                 </nav>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 lg:gap-4">
                     <button 
                         onClick={handleShare}
-                        className="text-gray-300 hover:text-accent transition-colors p-2 rounded-full hover:bg-white/5"
+                        className="text-gray-300 hover:text-accent transition-colors p-1 lg:p-2 rounded-full hover:bg-white/5"
                         title="Compartir página"
                         aria-label="Compartir página"
                     >
-                        <span className="material-symbols-outlined">share</span>
+                        <span className="material-symbols-outlined text-[16px] sm:text-[20px] lg:text-[24px]">share</span>
                     </button>
-                    <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-sm font-bold shadow-lg">
+                    <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[9px] sm:text-[10px] lg:text-sm font-bold shadow-lg whitespace-nowrap">
                         <span>Únete</span>
                     </a>
                 </div>
             </div>
-
-            {/* Mobile Nav Toggle */}
-            <button className="lg:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                <span className="material-symbols-outlined">menu</span>
-            </button>
         </div>
-        
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-            <div className="lg:hidden bg-[#050202] border-b border-white/10 py-4 px-6 absolute w-full left-0 top-20 flex flex-col gap-4 shadow-xl">
-                 <a href="#top" className="text-gray-300 hover:text-accent font-medium" onClick={(e) => scrollToSection(e, 'top')}>Inicio</a>
-                 <a href="#" className="text-gray-300 hover:text-accent font-medium" onClick={openAboutModal}>Nosotros</a>
-                 <a href="#security" className="text-gray-300 hover:text-accent font-medium" onClick={(e) => scrollToSection(e, 'security')}>Seguridad</a>
-                 <a href="#earnings" className="text-gray-300 hover:text-accent font-medium" onClick={(e) => scrollToSection(e, 'earnings')}>Ganancias</a>
-                 <a href="#contact" className="text-gray-300 hover:text-accent font-medium" onClick={(e) => scrollToSection(e, 'contact')}>Contáctanos</a>
-                 <button onClick={handleShare} className="text-gray-300 hover:text-accent font-medium text-left flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[20px]">share</span> Compartir
-                 </button>
-                 <a href="#apply" className="text-accent font-bold" onClick={(e) => scrollToSection(e, 'apply')}>Únete Ahora</a>
-            </div>
-        )}
       </div>
 
       {/* Hero Section */}

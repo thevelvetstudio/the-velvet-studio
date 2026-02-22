@@ -38,6 +38,44 @@ export const Chatbot: React.FC = () => {
         }
     };
 
+    const formatMessage = (text: string) => {
+        // Regex to match markdown links: [text](url)
+        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        const parts = [];
+        let lastIndex = 0;
+        let match;
+
+        while ((match = linkRegex.exec(text)) !== null) {
+            // Add text before the link
+            if (match.index > lastIndex) {
+                parts.push(text.substring(lastIndex, match.index));
+            }
+
+            // Add the link as a button
+            parts.push(
+                <a
+                    key={match.index}
+                    href={match[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 my-2 no-underline text-xs"
+                >
+                    <span className="material-symbols-outlined text-sm">chat</span>
+                    {match[1]}
+                </a>
+            );
+
+            lastIndex = linkRegex.lastIndex;
+        }
+
+        // Add remaining text
+        if (lastIndex < text.length) {
+            parts.push(text.substring(lastIndex));
+        }
+
+        return parts.length > 0 ? parts : text;
+    };
+
     return (
         <>
             {/* Toggle Button Container */}
@@ -117,7 +155,7 @@ export const Chatbot: React.FC = () => {
                                     ? 'bg-primary text-white rounded-tr-none' 
                                     : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
                             } ${msg.isError ? 'bg-red-900/50 border-red-500/30' : ''}`}>
-                                {msg.text}
+                                {formatMessage(msg.text)}
                             </div>
                         </div>
                     ))}

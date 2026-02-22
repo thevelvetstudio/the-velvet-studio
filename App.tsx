@@ -115,18 +115,17 @@ function App() {
       <LegalModal isOpen={isLegalModalOpen} onClose={() => setIsLegalModalOpen(false)} initialSection={legalActiveTab} />
 
 
-      {/* Header */}
       <div className="fixed top-0 z-50 w-full border-b border-[#800020]/20 bg-[#050202]/90 backdrop-blur-md">
-        <div className="flex flex-col md:flex-row h-auto md:h-20 items-center justify-between px-3 sm:px-6 lg:px-12 max-w-7xl mx-auto pt-2 pb-1 md:py-0 gap-1 md:gap-0">
+        <div className="flex flex-col md:flex-row h-auto md:h-20 items-center justify-between px-3 sm:px-6 lg:px-12 max-w-7xl mx-auto pt-0.5 pb-0 md:py-0 gap-0 md:gap-0">
             <div className="flex items-center gap-3 shrink-0 self-start md:self-auto">
     {/* Envolvemos todo en un enlace para que sea clickable */}
     <a 
         href="#top" 
         onClick={(e) => scrollToSection(e, 'top')} 
-        className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+        className="flex items-center gap-1.5 hover:opacity-80 transition-opacity cursor-pointer"
     >
         {/* Nuevo Logo Header */}
-        <div className="flex items-center justify-center size-8 sm:size-10 overflow-hidden rounded-full">
+        <div className="flex items-center justify-center size-10 overflow-hidden rounded-full">
             <img 
                 src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771387670/android-chrome-512x512_ksllge.png" 
                 alt="The Velvet Studio" 
@@ -135,32 +134,32 @@ function App() {
         </div>
 
         {/* Bloque de Texto - Visible en todas las pantallas */}
-        <div className="flex flex-col justify-center mt-[10px]">
-            <h2 className="text-white text-base md:text-lg font-bold tracking-tight font-brand leading-none">THE VELVET</h2>
-            <span className="text-accent text-[7px] md:text-[8px] tracking-[0.3em] uppercase font-display">Studio</span>
+        <div className="flex flex-col justify-center mt-[5px]">
+            <h2 className="text-white text-base md:text-lg font-bold tracking-tight font-brand leading-none mt-2.5 md:mt-1">THE VELVET</h2>
+            <span className="text-accent text-[7px] md:text-[8px] tracking-[0.3em] uppercase font-display mt-0 md:-mt-2">Studio</span>
         </div>
     </a>
 </div>
             
             {/* Nav - Visible en todas las pantallas */}
-            <div className="flex items-center gap-1.5 sm:gap-4 lg:gap-8 w-full md:w-auto justify-between md:justify-end">
-                <nav className="flex gap-2.5 sm:gap-3 lg:gap-6 pl-2 md:pl-0">
-                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Inicio</a>
-                    <a href="#" onClick={openAboutModal} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Nosotros</a>
-                    <a href="#security" onClick={(e) => scrollToSection(e, 'security')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Seguridad</a>
-                    <a href="#earnings" onClick={(e) => scrollToSection(e, 'earnings')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Ganancias</a>
-                    <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-gray-300 hover:text-accent transition-colors text-[9px] sm:text-[10px] lg:text-sm font-medium whitespace-nowrap">Contacto</a>
+            <div className="-mt-[26px] md:mt-0 flex items-end md:items-center gap-1.5 sm:gap-4 lg:gap-8 w-full md:w-auto justify-between md:justify-end">
+                <nav className="flex items-center gap-2.5 sm:gap-3 lg:gap-6 pl-2 md:pl-0 mb-1.5 md:mb-0">
+                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Inicio</a>
+                    <a href="#" onClick={openAboutModal} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Nosotros</a>
+                    <a href="#security" onClick={(e) => scrollToSection(e, 'security')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Seguridad</a>
+                    <a href="#earnings" onClick={(e) => scrollToSection(e, 'earnings')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Ganancias</a>
+                    <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Contacto</a>
                 </nav>
-                <div className="flex items-center gap-2 lg:gap-4">
+                <div className="flex flex-col md:flex-row items-center gap-0.5 md:gap-2 lg:gap-4">
                     <button 
                         onClick={handleShare}
-                        className="text-gray-300 hover:text-accent transition-colors p-1 lg:p-2 rounded-full hover:bg-white/5"
+                        className="flex items-center justify-center text-gray-300 hover:text-accent transition-colors p-1 lg:p-2 rounded-full hover:bg-white/5"
                         title="Compartir página"
                         aria-label="Compartir página"
                     >
-                        <span className="material-symbols-outlined text-[16px] sm:text-[20px] lg:text-[24px]">share</span>
+                        <span className="material-symbols-outlined text-[16px] sm:text-[20px] lg:text-[24px] leading-none">share</span>
                     </button>
-                    <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[9px] sm:text-[10px] lg:text-sm font-bold shadow-lg whitespace-nowrap">
+                    <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[10px] sm:text-xs lg:text-sm font-bold shadow-lg whitespace-nowrap">
                         <span>Únete</span>
                     </a>
                 </div>

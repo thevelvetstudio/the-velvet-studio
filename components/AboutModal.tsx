@@ -78,7 +78,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                     {/* Intro */}
                     <div className="prose prose-invert max-w-none">
                         <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed border-l-4 border-accent pl-6">
-                            En <strong className="text-white">The Velvet Studio</strong>, no solo gestionamos talento; redefinimos el estándar de la industria webcam bajo una premisa de exclusividad, elegancia y tecnología de punta. Con sede en Manizales, nuestra agencia boutique nace para transformar la creación de contenido en una carrera profesional de alto impacto y un estilo de vida de élite.
+                            En <strong className="text-white">The Velvet Studio</strong>, no solo gestionamos talento; redefinimos el estándar de la industria webcam bajo una premisa de exclusividad, elegancia y tecnología de punta. Con sede en Manizales, nuestra agencia boutique nace para transformar la creación de contenido en vivo en una carrera profesional de alto impacto y un estilo de vida superior.
                         </p>
                     </div>
 
@@ -145,7 +145,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                                 {
                                     icon: 'trending_up',
                                     title: 'Acompañamiento Estratégico',
-                                    desc: 'Asesoría en imagen y comunicación persuasiva y cultural para conectar con audiencias internacionales.'
+                                    desc: 'Asesoría en imagen y comunicación persuasiva y cultural para conectar con audiencias internacionales. Formación continua para tu desarrollo profesional.'
                                 },
                                 {
                                     icon: 'security',

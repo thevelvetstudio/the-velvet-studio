@@ -242,7 +242,7 @@ function App() {
                 {[
                     { icon: 'fingerprint', title: 'Verificación Sumsub', desc: 'Sistema avanzado de verificación biométrica de identidad para asegurar que solo interactúas con usuarios verificados.' },
                     { icon: 'public_off', title: 'Geo-bloqueo VPN', desc: 'Tecnología de bloqueo geográfico para proteger tu privacidad. Tu contenido no será visible en Colombia o regiones restringidas.' },
-                    { icon: 'support_agent', title: 'Soporte Pineapple', desc: 'Apoyo integral en salud mental y bienestar. Acceso 24/7 a profesionales para mantener un equilibrio saludable.' }
+                    { icon: 'trending_up', title: 'Acompañamiento Estratégico', desc: 'Asesoría en imagen y comunicación persuasiva y cultural para conectar con audiencias internacionales. Formación continua para tu desarrollo profesional.' }
                 ].map((item) => (
                     <div key={item.title} className="group p-8 rounded-2xl bg-card-dark border border-white/5 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1">
                         <div className="size-14 rounded-xl bg-gradient-to-br from-red-900 to-black flex items-center justify-center mb-6 group-hover:shadow-[0_0_15px_rgba(128,0,0,0.5)]">

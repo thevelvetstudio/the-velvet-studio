@@ -144,6 +144,15 @@ export const Chatbot: React.FC = () => {
                             </span>
                         </div>
                     </div>
+                    
+                    {/* Close Button */}
+                    <button 
+                        onClick={() => setIsOpen(false)}
+                        className="text-white/70 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10"
+                        aria-label="Cerrar chat"
+                    >
+                        <span className="material-symbols-outlined text-xl">close</span>
+                    </button>
                 </div>
 
                 {/* Messages Area */}

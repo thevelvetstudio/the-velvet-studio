@@ -77,7 +77,7 @@ export const EarningsCalculator: React.FC = () => {
                                         <button
                                             key={lvl}
                                             onClick={() => setLevel(lvl)}
-                                            className={`py-2 px-4 rounded-lg text-sm border transition-all duration-300 ${
+                                            className={`py-2 px-4 rounded-lg text-sm border transition-all duration-300 flex items-center justify-center ${
                                                 level === lvl 
                                                 ? 'bg-primary/20 text-accent border-accent/50 font-medium ring-1 ring-accent/20' 
                                                 : 'bg-gray-800 text-gray-400 border-transparent hover:bg-gray-700'

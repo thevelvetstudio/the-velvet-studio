@@ -63,7 +63,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) =
 
                 {/* Social Media Section */}
                 <div className="flex flex-col items-center gap-6 mb-12">
-                    <span className="text-white text-sm font-bold uppercase tracking-[0.3em] font-display">SÍGUENOS</span>
+                    <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] font-display">SÍGUENOS</span>
                     <div className="flex items-center gap-5">
                         {socialIcons.map((social) => (
                             <a key={social.name} href={social.href} target={social.target} rel="noreferrer" aria-label={social.name} className="flex items-center justify-center size-11 rounded-full border border-white/30 text-white hover:border-accent hover:text-accent transition-all duration-300">

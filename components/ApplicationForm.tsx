@@ -213,7 +213,7 @@ export const ApplicationForm: React.FC = () => {
                                 <button 
                                     type="submit" 
                                     disabled={isSubmitting}
-                                    className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-bold text-lg shadow-[0_0_20px_rgba(75,0,130,0.4)] hover:shadow-[0_0_30px_rgba(75,0,130,0.6)] transition-all transform hover:-translate-y-1 relative overflow-hidden group border border-white/10 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] hover:from-[#DAA520] hover:via-[#FFE4B5] hover:to-[#DAA520] text-black font-black text-lg shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all transform hover:-translate-y-1 relative overflow-hidden group border border-[#FFD700]/50 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                                     <span className="relative z-10 flex items-center justify-center gap-2 font-display uppercase tracking-wider">

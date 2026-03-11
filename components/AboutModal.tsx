@@ -29,7 +29,10 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-5xl bg-[#0e1324] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-[fadeIn_0.3s_ease-out]">
+            <div className="relative w-full max-w-5xl bg-[#0a0205] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(150,0,50,0.2)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-[fadeIn_0.3s_ease-out]">
+                
+                {/* Ambient Glow in the body */}
+                <div className="absolute top-1/3 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-background-dark/0 to-transparent pointer-events-none"></div>
                 
                 {/* Close Button */}
                 <button 
@@ -42,9 +45,20 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 {/* Header Image/Gradient Area */}
             <div className="relative h-48 md:h-64 overflow-hidden rounded-t-3xl">
                 {/* 1. Fondos (Gradientes e Imagen) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary via-purple-900 to-background-dark opacity-80"></div>
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598550476439-cce8bd2deb1d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-50"></div>
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0e1324] to-transparent"></div>
+                {/* Textura de terciopelo personalizada */}
+                <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dsblmqrrg/image/upload/v1773270863/Terciopelo_w3yrqe.png')] bg-cover bg-center"></div>
+                
+                {/* Luz ambiental profunda y sensual (tonos vino y magenta oscuro) */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-rose-900/80 via-purple-900/60 to-black/90 mix-blend-multiply"></div>
+                
+                {/* Destellos cálidos y sugerentes (rojo rubí) para resaltar la textura */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-red-600/50 via-transparent to-pink-600/20 mix-blend-color-dodge opacity-80"></div>
+                
+                {/* Viñeteado oscuro para dar intimidad, misterio y profundidad */}
+                <div className="absolute inset-0 shadow-[inset_0_0_150px_rgba(0,0,0,1)] bg-black/20"></div>
+                
+                {/* Transición suave hacia el color de fondo del modal */}
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0205] via-[#0a0205]/90 to-transparent"></div>
 
                 {/* 2. NUEVO: Logo Centrado */}
                 {/* Usamos 'pointer-events-none' para que el logo no bloquee clics si cubre algo */}
@@ -87,7 +101,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/30 transition-all duration-700"></div>
                         
                         <div className="relative z-10">
-                            <div className="size-12 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center mb-4 shadow-lg">
+                            <div className="size-12 rounded-lg bg-gradient-to-br from-rose-600 to-purple-700 flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(225,29,72,0.4)]">
                                 <span className="material-symbols-outlined text-white">smart_toy</span>
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Innovación Visual sin Precedentes</h3>

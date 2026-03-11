@@ -7,7 +7,7 @@ export const EarningsCalculator: React.FC = () => {
 
     const estimatedEarnings = useMemo(() => {
         // Tasa de generación por hora (Promedio estimado de tokens/dólares generados por la sala)
-        // Se ajustan estos valores para que el neto (60%) coincida con expectativas de mercado atractivas
+        // Se ajustan estos valores para que el neto (55%) coincida con expectativas de mercado atractivas
         let hourlyGeneration = 0;
         switch (level) {
             case EnglishLevel.BASIC: hourlyGeneration = 20; break;      // Neto aprox $12/h
@@ -16,8 +16,8 @@ export const EarningsCalculator: React.FC = () => {
         }
         
         const totalGenerated = hours * 4 * hourlyGeneration;
-        // La modelo recibe el 60%
-        return totalGenerated * 0.60;
+        // La modelo recibe el 55%
+        return totalGenerated * 0.55;
     }, [hours, level]);
 
     const formatCurrency = (amount: number) => {
@@ -109,7 +109,7 @@ export const EarningsCalculator: React.FC = () => {
                         <div className="w-full max-w-xs space-y-3">
                             <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
                                 <span className="text-gray-400 text-left">Tu Porcentaje</span>
-                                <span className="text-accent font-bold text-right">60%</span>
+                                <span className="text-accent font-bold text-right">55%</span>
                             </div>
                             <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
                                 <span className="text-gray-400 text-left">Semanales</span>

@@ -41,7 +41,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                         <span className="material-symbols-outlined text-accent text-2xl">balance</span>
                         <h2 className="text-xl md:text-2xl font-bold text-white font-display">Información Legal</h2>
                     </div>
-                    <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors">
+                    <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-stone-400 hover:text-white transition-colors">
                         <span className="material-symbols-outlined">close</span>
                     </button>
                 </div>

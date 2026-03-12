@@ -153,8 +153,8 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/30 transition-all duration-700"></div>
                         
                         <div className="relative z-10">
-                            <div className="size-12 rounded-lg bg-gradient-to-br from-rose-600 to-purple-700 flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(225,29,72,0.4)]">
-                                <span className="material-symbols-outlined text-white">smart_toy</span>
+                            <div className="size-12 rounded-lg bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center mb-4">
+                                <span className="material-symbols-outlined text-accent drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">center_focus_strong</span>
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Innovación Visual sin Precedentes</h3>
                             <p className="text-gray-400 text-sm leading-relaxed">

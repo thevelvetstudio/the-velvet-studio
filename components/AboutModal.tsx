@@ -20,6 +20,29 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'Sobre Nosotros - The Velvet Studio',
+            text: 'Conoce más sobre The Velvet Studio, la agencia webcam líder en Colombia.',
+            url: window.location.href,
+        };
+        if (navigator.share) {
+            try { await navigator.share(shareData); } catch (err) {}
+        } else {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                alert('¡Enlace copiado al portapapeles!');
+            } catch (err) {}
+        }
+    };
+
+    const handleGoHome = () => {
+        onClose();
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
@@ -34,13 +57,30 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 {/* Ambient Glow in the body */}
                 <div className="absolute top-1/3 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-background-dark/0 to-transparent pointer-events-none"></div>
                 
-                {/* Close Button */}
-                <button 
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-red-500/20 hover:text-red-400 transition-all border border-white/5"
-                >
-                    <span className="material-symbols-outlined">close</span>
-                </button>
+                {/* Action Buttons */}
+                <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
+                    <button 
+                        onClick={handleGoHome}
+                        title="Ir al inicio"
+                        className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+                    >
+                        <span className="material-symbols-outlined">home</span>
+                    </button>
+                    <button 
+                        onClick={handleShare}
+                        title="Compartir"
+                        className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+                    >
+                        <span className="material-symbols-outlined">share</span>
+                    </button>
+                    <button 
+                        onClick={onClose}
+                        title="Cerrar"
+                        className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-red-500/20 hover:text-red-400 transition-all border border-white/5"
+                    >
+                        <span className="material-symbols-outlined">close</span>
+                    </button>
+                </div>
 
                 {/* Header Image/Gradient Area */}
             <div className="relative h-48 md:h-64 overflow-hidden rounded-t-3xl">
@@ -60,17 +100,27 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 {/* Transición suave hacia el color de fondo del modal */}
                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0205] via-[#0a0205]/90 to-transparent"></div>
 
-                {/* 2. NUEVO: Logo Centrado */}
-                {/* Usamos 'pointer-events-none' para que el logo no bloquee clics si cubre algo */}
                 {/* 2. NUEVO: Logo Centrado Arriba y Más Grande */}
                 {/* Cambié 'items-center' por 'items-start' y añadí 'pt-1' para subirlo */}
                 <div className="absolute inset-0 flex items-start justify-center z-10 pointer-events-none pt-1 md:pt-12">
-                    <img 
-                        src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771403608/The_Velvet_Studio_-_Logo_transparente_sombra_-_Variaci%C3%B3n_ytidgu.png" 
-                        alt="Logo Velvet" 
-                        /* Aumenté el tamaño: de w-24/w-32 a w-60/w-80 */
-                        className="w-60 md:w-80 opacity-90 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]"
-                    />
+                    <a 
+                        href="#top"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onClose();
+                            setTimeout(() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }, 100);
+                        }}
+                        className="pointer-events-auto cursor-pointer transition-transform duration-500 hover:scale-105"
+                    >
+                        <img 
+                            src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771403608/The_Velvet_Studio_-_Logo_transparente_sombra_-_Variaci%C3%B3n_ytidgu.png" 
+                            alt="Logo Velvet" 
+                            /* Aumenté el tamaño: de w-24/w-32 a w-60/w-80 */
+                            className="w-60 md:w-80 opacity-90 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]"
+                        />
+                    </a>
                 </div>
 
                 {/* 3. Contenido de Texto (Abajo a la izquierda) */}

@@ -144,7 +144,7 @@ function App() {
             {/* Nav - Visible en todas las pantallas */}
             <div className="-mt-[26px] md:mt-0 flex items-end md:items-center gap-1.5 sm:gap-4 lg:gap-8 w-full md:w-auto justify-between md:justify-end">
                 <nav className="flex items-center gap-2.5 sm:gap-3 lg:gap-6 pl-2 md:pl-0 mb-1.5 md:mb-0">
-                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Inicio</a>
+                    <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="text-stone-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Inicio</a>
                     <a href="#" onClick={openAboutModal} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Nosotros</a>
                     <a href="#security" onClick={(e) => scrollToSection(e, 'security')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Seguridad</a>
                     <a href="#earnings" onClick={(e) => scrollToSection(e, 'earnings')} className="text-gray-300 hover:text-accent transition-colors text-[10px] sm:text-xs lg:text-sm font-medium whitespace-nowrap">Ganancias</a>

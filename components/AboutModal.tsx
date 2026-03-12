@@ -53,7 +53,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-5xl bg-[#0a0205] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(150,0,50,0.2)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-[fadeIn_0.3s_ease-out]">
+            <div className="relative w-full max-w-5xl bg-[#0a0205] border border-white/10 border-t-white/20 border-l-white/20 rounded-3xl shadow-[0_0_50px_rgba(150,0,50,0.2)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-scaleIn">
                 
                 {/* Ambient Glow in the body */}
                 <div className="absolute top-1/3 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-background-dark/0 to-transparent pointer-events-none"></div>
@@ -118,8 +118,9 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                         <img 
                             src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771403608/The_Velvet_Studio_-_Logo_transparente_sombra_-_Variaci%C3%B3n_ytidgu.png" 
                             alt="Logo Velvet" 
+                            loading="lazy"
                             /* Aumenté el tamaño: de w-24/w-32 a w-60/w-80 */
-                            className="w-60 md:w-80 opacity-90 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]"
+                            className="w-60 md:w-80 opacity-90 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] animate-fadeIn"
                         />
                     </a>
                 </div>

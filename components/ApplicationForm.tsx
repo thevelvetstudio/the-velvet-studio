@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SuccessModal } from './SuccessModal';
+import { motion } from 'motion/react';
 
 // REEMPLAZA ESTA URL CON LA URL DE TU APLICACIÓN WEB DE GOOGLE APPS SCRIPT
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0Pro1j_Xx9btBEQulFlf4LofGkzqm2PQjq7xHmmjrSeU9_UzAuhyr3LnkXQn5zYeb/exec"; 
@@ -40,6 +41,14 @@ export const ApplicationForm: React.FC = () => {
 
     const handleAuthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData(prev => ({ ...prev, dataAuth: e.target.checked }));
+    };
+
+    const isFieldValid = (name: string, value: string) => {
+        if (!value) return false;
+        if (name === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        if (name === 'phone') return value.length >= 7;
+        if (name === 'age') return parseInt(value) >= 18;
+        return value.length > 2;
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -98,22 +107,34 @@ export const ApplicationForm: React.FC = () => {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-12"
+                    >
                         <span className="text-accent text-sm font-bold uppercase tracking-widest mb-3 block font-display">Postulación Exclusiva</span>
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-display">Comienza tu Legado</h2>
                         <p className="text-stone-400 text-lg max-w-2xl mx-auto font-light font-body">
                             Da el primer paso hacia una carrera de éxito en la industria webcam. Completa el formulario para iniciar tu proceso de selección.
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className="rounded-3xl p-8 md:p-12 border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl relative mb-12">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="rounded-3xl p-8 md:p-12 border border-white/10 border-t-white/20 border-l-white/20 bg-white/5 backdrop-blur-xl shadow-2xl relative mb-12"
+                    >
                         <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50"></div>
                         </div>
 
                         <form className="space-y-8" onSubmit={handleSubmit}>
                             <div className="pb-4">
-                                <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide mb-4 block font-display">Selecciona tu Rol</label>
+                                <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide mb-4 block font-display">Selecciona tu Rol <span className="text-accent">*</span></label>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[
                                         { val: 'estudio', label: 'Quiero ser modelo de estudio' },
@@ -137,41 +158,53 @@ export const ApplicationForm: React.FC = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {[
-                                    { label: 'Nombre Completo', name: 'name', icon: 'person', type: 'text', placeholder: 'Ej. Ana García' },
-                                    { label: 'Correo Electrónico', name: 'email', icon: 'mail', type: 'email', placeholder: 'ejemplo@correo.com' },
-                                    { label: 'Teléfono / WhatsApp', name: 'phone', icon: 'chat', type: 'tel', placeholder: '+57 300 000 0000' },
-                                    { label: 'Ciudad de residencia', name: 'city', icon: 'location_on', type: 'text', placeholder: 'Ciudad de residencia' },
-                                    { label: 'Edad', name: 'age', icon: 'cake', type: 'number', placeholder: 'Ej. 21', min: 18 },
-                                ].map((field) => (
-                                    <div key={field.label} className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide font-display">{field.label}</label>
-                                        <div className="relative group">
-                                            <span className="material-symbols-outlined absolute left-4 top-3.5 text-gray-500 group-focus-within:text-accent transition-colors">{field.icon}</span>
-                                            <input 
-                                                type={field.type} 
-                                                name={field.name}
-                                                value={(formData as any)[field.name]}
-                                                onChange={handleInputChange}
-                                                min={field.min}
-                                                required
-                                                className="w-full pl-12 pr-4 py-3.5 bg-background-dark/50 border border-white/10 rounded-xl focus:border-accent/50 focus:ring-1 focus:ring-accent/50 text-white placeholder-gray-600 outline-none transition-all" 
-                                                placeholder={field.placeholder} 
-                                            />
+                                    { label: 'Nombre Completo', name: 'name', icon: 'person', type: 'text', placeholder: 'Ej. Ana García', required: true },
+                                    { label: 'Correo Electrónico', name: 'email', icon: 'mail', type: 'email', placeholder: 'ejemplo@correo.com', required: true },
+                                    { label: 'Teléfono / WhatsApp', name: 'phone', icon: 'chat', type: 'tel', placeholder: '+57 300 000 0000', required: true },
+                                    { label: 'Ciudad de residencia', name: 'city', icon: 'location_on', type: 'text', placeholder: 'Ciudad de residencia', required: true },
+                                    { label: 'Edad', name: 'age', icon: 'cake', type: 'number', placeholder: 'Ej. 21', min: 18, required: true },
+                                ].map((field) => {
+                                    const value = (formData as any)[field.name];
+                                    const isValid = isFieldValid(field.name, value);
+                                    return (
+                                        <div key={field.label} className="space-y-2">
+                                            <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide font-display">
+                                                {field.label} {field.required && <span className="text-accent">*</span>}
+                                            </label>
+                                            <div className="relative group">
+                                                <span className={`material-symbols-outlined absolute left-4 top-3.5 transition-colors ${isValid ? 'text-green-400' : 'text-gray-500 group-focus-within:text-accent'}`}>{field.icon}</span>
+                                                <input 
+                                                    type={field.type} 
+                                                    name={field.name}
+                                                    value={value}
+                                                    onChange={handleInputChange}
+                                                    min={field.min}
+                                                    required={field.required}
+                                                    className={`w-full pl-12 pr-10 py-3.5 bg-background-dark/50 border ${isValid ? 'border-green-500/50 focus:border-green-400' : 'border-white/10 focus:border-accent/50'} rounded-xl focus:ring-1 focus:ring-accent/50 text-white placeholder-gray-600 outline-none transition-all`} 
+                                                    placeholder={field.placeholder} 
+                                                />
+                                                {isValid && (
+                                                    <span className="material-symbols-outlined absolute right-4 top-3.5 text-green-500 animate-scaleIn">check_circle</span>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                                 <div className="md:col-span-2 space-y-2">
-                                    <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide font-display">Instagram</label>
+                                    <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide font-display">Instagram <span className="text-gray-600 text-[10px] normal-case">(Opcional)</span></label>
                                     <div className="relative group">
-                                        <span className="material-symbols-outlined absolute left-4 top-3.5 text-gray-500 group-focus-within:text-accent transition-colors">photo_camera</span>
+                                        <span className={`material-symbols-outlined absolute left-4 top-3.5 transition-colors ${formData.instagram ? 'text-green-400' : 'text-gray-500 group-focus-within:text-accent'}`}>photo_camera</span>
                                         <input 
                                             type="text" 
                                             name="instagram"
                                             value={formData.instagram}
                                             onChange={handleInputChange}
-                                            className="w-full pl-12 pr-4 py-3.5 bg-background-dark/50 border border-white/10 rounded-xl focus:border-accent/50 focus:ring-1 focus:ring-accent/50 text-white placeholder-gray-600 outline-none transition-all" 
+                                            className={`w-full pl-12 pr-10 py-3.5 bg-background-dark/50 border ${formData.instagram ? 'border-green-500/50 focus:border-green-400' : 'border-white/10 focus:border-accent/50'} rounded-xl focus:ring-1 focus:ring-accent/50 text-white placeholder-gray-600 outline-none transition-all`} 
                                             placeholder="@usuario (Perfil Público)" 
                                         />
+                                        {formData.instagram && (
+                                            <span className="material-symbols-outlined absolute right-4 top-3.5 text-green-500 animate-scaleIn">check_circle</span>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +238,7 @@ export const ApplicationForm: React.FC = () => {
                                     className="custom-checkbox appearance-none size-5 border border-white/40 rounded bg-transparent checked:bg-accent checked:border-accent focus:ring-0 focus:ring-offset-0 transition-all cursor-pointer relative" 
                                 />
                                 <label htmlFor="data-treatment" className="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider cursor-pointer font-bold font-display">
-                                    AUTORIZO EL TRATAMIENTO DE DATOS PERSONALES
+                                    AUTORIZO EL TRATAMIENTO DE DATOS PERSONALES <span className="text-accent">*</span>
                                 </label>
                             </div>
 
@@ -213,9 +246,9 @@ export const ApplicationForm: React.FC = () => {
                                 <button 
                                     type="submit" 
                                     disabled={isSubmitting}
-                                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] hover:from-[#DAA520] hover:via-[#FFE4B5] hover:to-[#DAA520] text-black font-black text-lg shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all transform hover:-translate-y-1 relative overflow-hidden group border border-[#FFD700]/50 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] hover:from-[#DAA520] hover:via-[#FFE4B5] hover:to-[#DAA520] text-black font-black text-lg shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] transition-all transform hover:-translate-y-1 relative overflow-hidden group border border-[#FFD700]/50 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer skew-x-12"></div>
                                     <span className="relative z-10 flex items-center justify-center gap-2 font-display uppercase tracking-wider">
                                         {isSubmitting ? (
                                             <>
@@ -223,11 +256,14 @@ export const ApplicationForm: React.FC = () => {
                                             </>
                                         ) : (
                                             <>
-                                                Enviar Postulación <span className="material-symbols-outlined">send</span>
+                                                Enviar Postulación <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
                                             </>
                                         )}
                                     </span>
                                 </button>
+                                <p className="text-center text-gray-500 text-xs mt-4 font-body">
+                                    <span className="text-accent">*</span> Campos obligatorios. Tu información es 100% confidencial y segura.
+                                </p>
                             </div>
 
                             <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10 mt-6 text-center">
@@ -243,9 +279,15 @@ export const ApplicationForm: React.FC = () => {
                                 ))}
                             </div>
                         </form>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col items-center justify-center gap-6">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="flex flex-col items-center justify-center gap-6"
+                    >
                         <span className="text-accent text-sm font-bold uppercase tracking-[0.2em] font-display">Síguenos</span>
                         <div className="flex items-center gap-5">
                             {[
@@ -262,7 +304,7 @@ export const ApplicationForm: React.FC = () => {
                                 </a>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -29,7 +29,7 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-4xl bg-[#0e1324] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(139,0,0,0.2)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-[fadeIn_0.3s_ease-out] flex flex-col">
+            <div className="relative w-full max-w-4xl bg-[#0e1324] border border-white/10 border-t-white/20 border-l-white/20 rounded-3xl shadow-[0_0_50px_rgba(139,0,0,0.2)] max-h-[90vh] overflow-y-auto custom-scrollbar animate-scaleIn flex flex-col">
                 
                 {/* Close Button */}
                 <button 
@@ -45,7 +45,8 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
                     <img 
                         src="https://images.unsplash.com/photo-1629814596180-2d88d308064d?q=80&w=2070&auto=format&fit=crop" 
                         alt="Manizales Catedral" 
-                        className="w-full h-full object-cover opacity-80 mix-blend-overlay"
+                        loading="lazy"
+                        className="w-full h-full object-cover opacity-80 mix-blend-overlay animate-fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-900/30 mix-blend-overlay"></div>
                     

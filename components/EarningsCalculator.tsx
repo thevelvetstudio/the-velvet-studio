@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { EnglishLevel } from '../types';
+import { motion } from 'motion/react';
 
 export const EarningsCalculator: React.FC = () => {
     const [hours, setHours] = useState(40);
@@ -40,7 +41,13 @@ export const EarningsCalculator: React.FC = () => {
     return (
         <section id="earnings" className="py-24 relative bg-gradient-to-b from-[#050510] to-secondary">
             <div className="container mx-auto px-6 lg:px-12">
-                <div className="flex flex-col lg:flex-row gap-12 bg-card-dark rounded-3xl p-8 lg:p-12 border border-white/10 shadow-2xl relative overflow-hidden">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col lg:flex-row gap-12 bg-card-dark rounded-3xl p-8 lg:p-12 border border-white/10 shadow-2xl relative overflow-hidden"
+                >
                     <div className="absolute -top-24 -right-24 size-64 bg-accent/10 rounded-full blur-3xl"></div>
                     
                     {/* Controls */}
@@ -131,7 +138,7 @@ export const EarningsCalculator: React.FC = () => {
                             </span>
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

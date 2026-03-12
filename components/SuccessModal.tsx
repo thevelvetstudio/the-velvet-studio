@@ -33,12 +33,12 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) =
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             {/* Backdrop - Darker and blurred to match the image's immersive feel */}
             <div 
-                className="absolute inset-0 bg-[#02040a]/98 backdrop-blur-md animate-[fadeIn_0.5s_ease-out]"
+                className="absolute inset-0 bg-[#02040a]/98 backdrop-blur-md animate-fadeIn"
                 onClick={onClose}
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-5xl bg-transparent flex flex-col items-center justify-center text-center animate-[scaleIn_0.5s_cubic-bezier(0.16,1,0.3,1)] z-10">
+            <div className="relative w-full max-w-5xl bg-transparent flex flex-col items-center justify-center text-center animate-scaleIn z-10">
                 
                 {/* Icon Circle */}
                 <div className="size-24 rounded-full border border-accent/30 bg-[#0a0f1c] flex items-center justify-center mb-10 shadow-[0_0_40px_rgba(255,215,0,0.05)] relative">

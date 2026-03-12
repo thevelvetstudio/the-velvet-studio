@@ -7,6 +7,9 @@ import { LocationModal } from './components/LocationModal';
 import { CareersModal } from './components/CareersModal';
 import { BlogModal } from './components/BlogModal';
 import { LegalModal, LegalSection } from './components/LegalModal';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import { motion } from 'motion/react';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -146,7 +149,8 @@ function App() {
             <img 
                 src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771387670/android-chrome-512x512_ksllge.png" 
                 alt="The Velvet Studio" 
-                className="w-full h-full object-cover"
+                loading="lazy"
+                className="w-full h-full object-cover animate-fadeIn"
             />
         </div>
 
@@ -190,13 +194,19 @@ function App() {
             <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBixMbXvIIf3xesDca1UWfkEqe6T50gBBgx5QVh2OSogcv2Rgexj8sOc9xqpno85o__3KRKz6Ug1MRHXKGCwg69rZJWDKCYfdg81Zr4eXjap1m5fy00ogBQPwo2eeOxMEr4HiMxt3Zq9fNMcxlMqbLQyfO7Weogsi3_tMOMZ2XLSZf6wPszr8m-OJ5Q19FgIHj2zTu32hiZMdNfrI96FGzFDJ9cNwC96mE0crcmcRzQ2yki2hpoPYyypnwjC11Ar8I5MiO9q12m9dRI" 
                 alt="Sophisticated studio" 
-                className="w-full h-full object-cover opacity-60" 
+                loading="lazy"
+                className="w-full h-full object-cover opacity-60 animate-fadeIn" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-secondary/30"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-center text-center max-w-5xl">
-            <div className="mb-6 flex flex-col items-center gap-6 animate-[fadeIn_0.5s_ease-out]">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="mb-6 flex flex-col items-center gap-6"
+            >
                 
                 {/* HERO LOGO SVG - Exact replica of the "Red V" image */}
                     {/* Nuevo Logo Hero (Grande) */}
@@ -208,7 +218,8 @@ function App() {
                         <img 
                             src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771385894/The_Velvet_Studio_-_Logo_transparente_sombra_f9abpe.png" 
                             alt="The Velvet Studio" 
-                            className="w-64 md:w-80 h-auto drop-shadow-2xl"
+                            loading="lazy"
+                            className="w-64 md:w-80 h-auto drop-shadow-2xl animate-fadeIn"
                         />
                     </a>
 
@@ -216,17 +227,32 @@ function App() {
                     <span className="material-symbols-outlined text-accent text-[18px]">verified</span>
                     <span className="text-xs font-semibold text-accent uppercase tracking-wider font-display">AGENCIA WEBCAM LIDER EN COLOMBIA</span>
                 </div>
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white mb-6 drop-shadow-2xl font-display">
+            <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white mb-6 drop-shadow-2xl font-display"
+            >
                 Tu proyección personal, convertida en <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-accent">éxito tangible</span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl leading-relaxed font-body">
+            <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl leading-relaxed font-body"
+            >
                 Gana en dólares con el respaldo de la agencia más exclusiva. Cámaras robóticas IA y calidad 4K para una ventaja competitiva inmediata. Seguridad, privacidad y crecimiento profesional en un solo lugar.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+            >
                 <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="h-14 px-8 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-lg shadow-[0_0_20px_rgba(128,0,32,0.4)] transition-all transform hover:scale-105 flex items-center justify-center gap-2">
                     Inicia tu Proceso de Selección
                     <span className="material-symbols-outlined">arrow_forward</span>
@@ -237,7 +263,7 @@ function App() {
                 >
                     Conoce más
                 </button>
-            </div>
+            </motion.div>
         </div>
       </div>
 
@@ -247,7 +273,13 @@ function App() {
         <div className="absolute bottom-0 left-0 w-1/4 h-full bg-accent/5 blur-[100px]"></div>
         
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-            <div className="flex flex-col md:flex-row gap-12 items-start justify-between mb-16">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="flex flex-col md:flex-row gap-12 items-start justify-between mb-16"
+            >
                 <div className="max-w-xl">
                     <h2 className="text-accent text-sm font-bold uppercase tracking-widest mb-2 font-display">Seguridad y Privacidad</h2>
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Protección Integral 360°</h3>
@@ -257,33 +289,48 @@ function App() {
                     <span className="material-symbols-outlined">shield_lock</span>
                     <span className="text-sm">Certificado SSL & Encriptación E2E</span>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                     { icon: 'fingerprint', title: 'Verificación Sumsub', desc: 'Sistema avanzado de verificación biométrica de identidad para asegurar que solo interactúas con usuarios verificados.' },
                     { icon: 'public_off', title: 'Geo-bloqueo VPN', desc: 'Tecnología de bloqueo geográfico para proteger tu privacidad. Tu contenido no será visible en Colombia o regiones restringidas.' },
                     { icon: 'trending_up', title: 'Acompañamiento Estratégico', desc: 'Asesoría en imagen y comunicación persuasiva y cultural para conectar con audiencias internacionales. Formación continua para tu desarrollo profesional.' }
-                ].map((item) => (
-                    <div key={item.title} className="group p-8 rounded-2xl bg-card-dark border border-white/5 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1">
+                ].map((item, index) => (
+                    <motion.div 
+                        key={item.title} 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: index * 0.15 }}
+                        className="group p-8 rounded-2xl bg-card-dark border border-white/5 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1"
+                    >
                         <div className="size-14 rounded-xl bg-gradient-to-br from-red-900 to-black flex items-center justify-center mb-6 group-hover:shadow-[0_0_15px_rgba(128,0,0,0.5)]">
                             <span className="material-symbols-outlined text-white text-3xl">{item.icon}</span>
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3 font-display">{item.title}</h4>
                         <p className="text-gray-400 text-sm leading-relaxed font-body">{item.desc}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
       </section>
 
       {/* Components */}
+      <Testimonials />
       <EarningsCalculator />
+      <FAQ />
       <ApplicationForm />
 
       {/* Footer */}
       <footer id="contact" className="bg-[#020101] border-t border-white/5 pt-16 pb-8">
-        <div className="container mx-auto px-6 lg:px-12">
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="container mx-auto px-6 lg:px-12"
+        >
             <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
                 <div className="max-w-xs">
                     <div className="flex items-center gap-3 mb-6">
@@ -301,7 +348,8 @@ function App() {
                                 <img 
                                     src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771387670/android-chrome-512x512_ksllge.png" 
                                     alt="The Velvet Studio Logo" 
-                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    className="w-full h-full object-cover animate-fadeIn"
                                 />
                             </div>
                             {/* FIN DEL LOGO */}
@@ -349,7 +397,7 @@ function App() {
                     <span className="text-xs text-gray-400 font-body">Sistemas Operativos Operando</span>
                 </div>
             </div>
-        </div>
+        </motion.div>
       </footer>
 
       {/* AI Chatbot */}

@@ -105,7 +105,8 @@ export const Chatbot: React.FC = () => {
                                 <img 
                                     src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771392270/favicon_Asistant_AI_180x180_faudyx.png" 
                                     alt="Velvet AI" 
-                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    className="w-full h-full object-cover animate-fadeIn"
                                 />
                             </div>
                             
@@ -130,7 +131,8 @@ export const Chatbot: React.FC = () => {
                             <img 
                                 src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771392270/favicon_Asistant_AI_180x180_faudyx.png" 
                                 alt="Velvet AI" 
-                                className="w-full h-full object-cover"
+                                loading="lazy"
+                                className="w-full h-full object-cover animate-fadeIn"
                             />
                             {/* Opcional: Un puntito verde de "Online" */}
                             <div className="absolute bottom-0 right-0 size-2 bg-green-500 rounded-full border border-black"></div>

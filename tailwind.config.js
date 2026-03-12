@@ -28,11 +28,30 @@ export default {
       },
       animation: {
         'pulse-gold': 'pulse-gold 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'scaleIn': 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slideUp': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fadeIn': 'fadeIn 0.5s ease-out forwards',
+        'shimmer': 'shimmer 1.5s infinite',
       },
       keyframes: {
         'pulse-gold': {
           '0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 215, 0, 0.4)' },
           '50%': { boxShadow: '0 0 20px 2px rgba(255, 215, 0, 0.6)' },
+        },
+        'scaleIn': {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'slideUp': {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'fadeIn': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'shimmer': {
+          '100%': { transform: 'translateX(100%)' },
         }
       }
     },

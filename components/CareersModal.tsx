@@ -72,11 +72,11 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" onClick={onClose}></div>
             
-            <div className="relative w-full max-w-4xl bg-[#0e1324] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] overflow-y-auto custom-scrollbar flex flex-col animate-[fadeIn_0.3s_ease-out]">
+            <div className="relative w-full max-w-4xl bg-[#0e1324] border border-white/10 border-t-white/20 border-l-white/20 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] overflow-y-auto custom-scrollbar flex flex-col animate-scaleIn">
                 
                 {/* Header Image */}
                 <div className="relative h-48 shrink-0 overflow-hidden rounded-t-3xl">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-60" alt="Team" />
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" loading="lazy" className="w-full h-full object-cover opacity-60 animate-fadeIn" alt="Team" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e1324] via-[#0e1324]/50 to-transparent"></div>
                     
                     <div className="absolute top-4 right-4 z-50 flex items-center gap-2">

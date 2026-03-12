@@ -33,7 +33,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" onClick={onClose}></div>
             
-            <div className="relative w-full max-w-5xl bg-[#0e1324] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] flex flex-col animate-[fadeIn_0.3s_ease-out]">
+            <div className="relative w-full max-w-5xl bg-[#0e1324] border border-white/10 border-t-white/20 border-l-white/20 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] flex flex-col animate-scaleIn">
                 
                 {/* Header */}
                 <div className="p-6 border-b border-white/10 flex justify-between items-center bg-[#050202]/50 rounded-t-3xl">
@@ -69,7 +69,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                     <div className="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-10 bg-[#0e1324]">
                         
                         {activeTab === 'privacy' && (
-                            <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
+                            <div className="space-y-6 animate-fadeIn">
                                 <h3 className="text-2xl font-bold text-white font-display mb-4">Política de Privacidad y Tratamiento de Datos</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">
                                     En The Velvet Studio, nos tomamos su privacidad con la máxima seriedad. Esta política describe cómo recopilamos, utilizamos y protegemos su información personal en cumplimiento con la Ley 1581 de 2012 (Ley de Habeas Data) de Colombia.
@@ -92,7 +92,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                         )}
 
                         {activeTab === 'terms' && (
-                            <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
+                            <div className="space-y-6 animate-fadeIn">
                                 <h3 className="text-2xl font-bold text-white font-display mb-4">Términos y Condiciones de Uso</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">
                                     El uso de la plataforma y servicios de The Velvet Studio implica la aceptación total de los siguientes términos. Estos rigen la relación contractual entre la agencia y el modelo/usuario.
@@ -125,7 +125,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, initial
                         )}
 
                         {activeTab === 'compliance' && (
-                            <div className="space-y-6 animate-[fadeIn_0.3s_ease-out]">
+                            <div className="space-y-6 animate-fadeIn">
                                 <h3 className="text-2xl font-bold text-white font-display mb-4">Compliance & Ética Corporativa</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">
                                     Operamos bajo estrictos estándares internacionales de legalidad y ética. The Velvet Studio tiene una política de tolerancia cero frente a actividades ilícitas.

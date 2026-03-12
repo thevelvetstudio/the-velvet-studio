@@ -185,7 +185,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" onClick={onClose}></div>
             
-            <div className="relative w-full max-w-6xl bg-[#0e1324] border border-white/10 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] overflow-y-auto custom-scrollbar flex flex-col animate-[fadeIn_0.3s_ease-out]">
+            <div className="relative w-full max-w-6xl bg-[#0e1324] border border-white/10 border-t-white/20 border-l-white/20 rounded-3xl shadow-[0_0_50px_rgba(75,0,130,0.3)] max-h-[90vh] overflow-y-auto custom-scrollbar flex flex-col animate-scaleIn">
                 
                 {/* Header */}
                 <div className="p-6 md:p-8 flex justify-between items-center border-b border-white/10 sticky top-0 bg-[#0e1324]/95 backdrop-blur z-20">
@@ -233,7 +233,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
                 <div className="p-6 md:p-10">
                     {selectedPost ? (
                         /* Single Post View */
-                        <div className="max-w-4xl mx-auto animate-[fadeIn_0.4s_ease-out]">
+                        <div className="max-w-4xl mx-auto animate-fadeIn">
                             <div className="mb-8">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-xs uppercase font-bold border border-accent/30">
@@ -249,7 +249,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
                             </div>
                             
                             <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-10 relative border border-white/10">
-                                <img src={selectedPost.image} alt={selectedPost.title} className="w-full h-full object-cover" />
+                                <img src={selectedPost.image} alt={selectedPost.title} loading="lazy" className="w-full h-full object-cover animate-fadeIn" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e1324] via-transparent to-transparent opacity-60"></div>
                             </div>
                             
@@ -289,7 +289,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
                                         <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-[10px] uppercase font-bold text-white border border-white/10">
                                             {post.category}
                                         </div>
-                                        <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                        <img src={post.image} alt={post.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 animate-fadeIn" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0e1324] to-transparent opacity-80"></div>
                                     </div>
                                     <div className="p-6 flex-1 flex flex-col">

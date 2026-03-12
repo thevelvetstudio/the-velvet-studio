@@ -21,7 +21,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     const handleShare = async () => {
-        const shareUrl = `${window.location.origin}${window.location.pathname}?modal=about`;
+        const shareUrl = `${window.location.origin}/nosotros`;
         const shareData = {
             title: 'Sobre Nosotros - The Velvet Studio',
             text: 'Conoce más sobre The Velvet Studio, la agencia webcam líder en Colombia.',
@@ -84,7 +84,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 {/* Header Image/Gradient Area */}
-            <div className="relative h-48 md:h-64 overflow-hidden rounded-t-3xl">
+            <div className="relative h-[17.5rem] md:h-[20rem] overflow-hidden rounded-t-3xl">
                 {/* 1. Fondos (Gradientes e Imagen) */}
                 {/* Textura de terciopelo personalizada */}
                 <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dsblmqrrg/image/upload/v1773270863/Terciopelo_w3yrqe.png')] bg-cover bg-center"></div>
@@ -102,8 +102,8 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0205] via-[#0a0205]/90 to-transparent"></div>
 
                 {/* 2. NUEVO: Logo Centrado Arriba y Más Grande */}
-                {/* Cambié 'items-center' por 'items-start' y añadí 'pt-1' para subirlo */}
-                <div className="absolute inset-0 flex items-start justify-center z-10 pointer-events-none pt-1 md:pt-12">
+                {/* Cambié 'items-center' por 'items-start' y añadí 'pt-16 md:pt-12' para subirlo */}
+                <div className="absolute inset-0 flex items-start justify-center z-10 pointer-events-none pt-16 md:pt-12">
                     <a 
                         href="#top"
                         onClick={(e) => {
@@ -125,7 +125,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 {/* 3. Contenido de Texto (Abajo a la izquierda) */}
-                <div className="absolute bottom-0 left-6 md:left-12 z-20">
+                <div className="absolute bottom-2 md:bottom-4 left-6 md:left-12 z-20">
                     <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-black/30 px-3 py-1 backdrop-blur-md mb-3">
                         <span className="material-symbols-outlined text-accent text-sm">verified</span>
                         <span className="text-[10px] font-bold text-accent uppercase tracking-wider font-display">Tecnología & Distinción</span>

@@ -29,6 +29,11 @@ function App() {
     else if (path === '/ubicacion' || modal === 'location') setIsLocationModalOpen(true);
   }, []);
 
+  const closeModal = (setter: React.Dispatch<React.SetStateAction<boolean>>) => {
+    setter(false);
+    window.history.pushState({}, '', '/');
+  };
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -120,11 +125,11 @@ function App() {
         </a>
 
       {/* Modals */}
-      <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
-      <LocationModal isOpen={isLocationModalOpen} onClose={() => setIsLocationModalOpen(false)} />
-      <CareersModal isOpen={isCareersModalOpen} onClose={() => setIsCareersModalOpen(false)} />
-      <BlogModal isOpen={isBlogModalOpen} onClose={() => setIsBlogModalOpen(false)} />
-      <LegalModal isOpen={isLegalModalOpen} onClose={() => setIsLegalModalOpen(false)} initialSection={legalActiveTab} />
+      <AboutModal isOpen={isAboutModalOpen} onClose={() => closeModal(setIsAboutModalOpen)} />
+      <LocationModal isOpen={isLocationModalOpen} onClose={() => closeModal(setIsLocationModalOpen)} />
+      <CareersModal isOpen={isCareersModalOpen} onClose={() => closeModal(setIsCareersModalOpen)} />
+      <BlogModal isOpen={isBlogModalOpen} onClose={() => closeModal(setIsBlogModalOpen)} />
+      <LegalModal isOpen={isLegalModalOpen} onClose={() => closeModal(setIsLegalModalOpen)} initialSection={legalActiveTab} />
 
 
       <div className="fixed top-0 z-50 w-full border-b border-[#800020]/20 bg-[#050202]/90 backdrop-blur-md">

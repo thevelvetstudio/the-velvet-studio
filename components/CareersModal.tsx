@@ -64,7 +64,7 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
                 </div>
 
                 <div className="p-6 md:p-10 space-y-8">
-                    <p className="text-gray-300 text-lg font-light leading-relaxed border-l-4 border-primary pl-4">
+                    <p className="text-stone-300 text-lg font-light leading-relaxed border-l-4 border-primary pl-4">
                         ¿Buscas más que un trabajo? En The Velvet Studio construimos carreras. Ofrecemos un ambiente de respeto, crecimiento y tecnología de punta.
                     </p>
 

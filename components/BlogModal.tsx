@@ -149,20 +149,37 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
     ];
 
     const handleShare = async (title?: string) => {
+        const shareUrl = title 
+            ? `${window.location.origin}${window.location.pathname}?modal=blog&post=${encodeURIComponent(title)}`
+            : `${window.location.origin}${window.location.pathname}?modal=blog`;
+
         const shareData = {
             title: title || 'Blog - The Velvet Studio',
             text: title ? `Lee este artículo: ${title}` : 'Descubre las últimas novedades y consejos en el blog de The Velvet Studio.',
-            url: window.location.href,
+            url: shareUrl,
         };
         if (navigator.share) {
             try { await navigator.share(shareData); } catch (err) {}
         } else {
             try {
-                await navigator.clipboard.writeText(window.location.href);
+                await navigator.clipboard.writeText(shareUrl);
                 alert('¡Enlace copiado al portapapeles!');
             } catch (err) {}
         }
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            const params = new URLSearchParams(window.location.search);
+            const postTitle = params.get('post');
+            if (postTitle) {
+                const post = posts.find(p => p.title === postTitle);
+                if (post) setSelectedPost(post);
+            }
+        } else {
+            setSelectedPost(null);
+        }
+    }, [isOpen]);
 
     const handleGoHome = () => {
         onClose();

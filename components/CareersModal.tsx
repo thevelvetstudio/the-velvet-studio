@@ -45,7 +45,7 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
     };
 
     const handleShare = async () => {
-        const shareUrl = `${window.location.origin}${window.location.pathname}?modal=careers`;
+        const shareUrl = `${window.location.origin}/carreras`;
         const shareData = {
             title: 'Carreras - The Velvet Studio',
             text: 'Únete al equipo de The Velvet Studio. Buscamos modelos y monitores bilingües.',

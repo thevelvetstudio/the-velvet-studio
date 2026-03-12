@@ -21,16 +21,17 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     const handleShare = async () => {
+        const shareUrl = `${window.location.origin}${window.location.pathname}?modal=about`;
         const shareData = {
             title: 'Sobre Nosotros - The Velvet Studio',
             text: 'Conoce más sobre The Velvet Studio, la agencia webcam líder en Colombia.',
-            url: window.location.href,
+            url: shareUrl,
         };
         if (navigator.share) {
             try { await navigator.share(shareData); } catch (err) {}
         } else {
             try {
-                await navigator.clipboard.writeText(window.location.href);
+                await navigator.clipboard.writeText(shareUrl);
                 alert('¡Enlace copiado al portapapeles!');
             } catch (err) {}
         }
@@ -246,5 +247,4 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 </div>
             </div>
         </div>
-    );
-};
+  

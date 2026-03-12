@@ -60,7 +60,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ isOpen, onClose }) => {
                         <span className="text-accent text-xs font-bold uppercase tracking-widest mb-1 block font-display">The Velvet Insider</span>
                         <h2 className="text-3xl md:text-4xl font-black text-white font-display">Blog & Novedades</h2>
                     </div>
-                    <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors">
+                    <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-stone-400 hover:text-white transition-colors">
                         <span className="material-symbols-outlined">close</span>
                     </button>
                 </div>

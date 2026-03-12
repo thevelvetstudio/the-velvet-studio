@@ -45,16 +45,17 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
     };
 
     const handleShare = async () => {
+        const shareUrl = `${window.location.origin}${window.location.pathname}?modal=careers`;
         const shareData = {
             title: 'Carreras - The Velvet Studio',
             text: 'Únete al equipo de The Velvet Studio. Buscamos modelos y monitores bilingües.',
-            url: window.location.href,
+            url: shareUrl,
         };
         if (navigator.share) {
             try { await navigator.share(shareData); } catch (err) {}
         } else {
             try {
-                await navigator.clipboard.writeText(window.location.href);
+                await navigator.clipboard.writeText(shareUrl);
                 alert('¡Enlace copiado al portapapeles!');
             } catch (err) {}
         }

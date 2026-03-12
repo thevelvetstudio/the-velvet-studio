@@ -183,13 +183,17 @@ function App() {
                 
                 {/* HERO LOGO SVG - Exact replica of the "Red V" image */}
                     {/* Nuevo Logo Hero (Grande) */}
-                    <div className="flex flex-col items-center justify-center mb-8 mt-12 md:mt-0 lg:mt-20 transition-transform duration-500 hover:scale-105">
+                    <a 
+                        href="#top" 
+                        onClick={(e) => scrollToSection(e, 'top')}
+                        className="flex flex-col items-center justify-center mb-8 mt-12 md:mt-0 lg:mt-20 transition-transform duration-500 hover:scale-105 cursor-pointer"
+                    >
                         <img 
                             src="https://res.cloudinary.com/dsblmqrrg/image/upload/v1771385894/The_Velvet_Studio_-_Logo_transparente_sombra_f9abpe.png" 
                             alt="The Velvet Studio" 
                             className="w-64 md:w-80 h-auto drop-shadow-2xl"
                         />
-                    </div>
+                    </a>
 
                 <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm mt-0">
                     <span className="material-symbols-outlined text-accent text-[18px]">verified</span>

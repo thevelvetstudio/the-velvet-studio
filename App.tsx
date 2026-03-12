@@ -17,6 +17,16 @@ function App() {
   const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
   const [legalActiveTab, setLegalActiveTab] = useState<LegalSection>('privacy');
 
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const modal = params.get('modal');
+    if (modal === 'about') setIsAboutModalOpen(true);
+    else if (modal === 'careers') setIsCareersModalOpen(true);
+    else if (modal === 'blog') setIsBlogModalOpen(true);
+    else if (modal === 'legal') setIsLegalModalOpen(true);
+    else if (modal === 'location') setIsLocationModalOpen(true);
+  }, []);
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);

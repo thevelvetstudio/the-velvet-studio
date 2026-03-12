@@ -18,13 +18,15 @@ function App() {
   const [legalActiveTab, setLegalActiveTab] = useState<LegalSection>('privacy');
 
   React.useEffect(() => {
+    const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
     const modal = params.get('modal');
-    if (modal === 'about') setIsAboutModalOpen(true);
-    else if (modal === 'careers') setIsCareersModalOpen(true);
-    else if (modal === 'blog') setIsBlogModalOpen(true);
-    else if (modal === 'legal') setIsLegalModalOpen(true);
-    else if (modal === 'location') setIsLocationModalOpen(true);
+
+    if (path === '/nosotros' || modal === 'about') setIsAboutModalOpen(true);
+    else if (path === '/carreras' || modal === 'careers') setIsCareersModalOpen(true);
+    else if (path === '/blog' || modal === 'blog') setIsBlogModalOpen(true);
+    else if (path === '/legal' || modal === 'legal') setIsLegalModalOpen(true);
+    else if (path === '/ubicacion' || modal === 'location') setIsLocationModalOpen(true);
   }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -189,7 +191,7 @@ function App() {
         </div>
 
         <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-center text-center max-w-5xl">
-            <div className="mb-2 flex flex-col items-center gap-6 animate-[fadeIn_0.5s_ease-out]">
+            <div className="mb-6 flex flex-col items-center gap-6 animate-[fadeIn_0.5s_ease-out]">
                 
                 {/* HERO LOGO SVG - Exact replica of the "Red V" image */}
                     {/* Nuevo Logo Hero (Grande) */}

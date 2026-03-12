@@ -44,6 +44,29 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
         if (element) element.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'Carreras - The Velvet Studio',
+            text: 'Únete al equipo de The Velvet Studio. Buscamos modelos y monitores bilingües.',
+            url: window.location.href,
+        };
+        if (navigator.share) {
+            try { await navigator.share(shareData); } catch (err) {}
+        } else {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                alert('¡Enlace copiado al portapapeles!');
+            } catch (err) {}
+        }
+    };
+
+    const handleGoHome = () => {
+        onClose();
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" onClick={onClose}></div>
@@ -54,11 +77,33 @@ export const CareersModal: React.FC<CareersModalProps> = ({ isOpen, onClose }) =
                 <div className="relative h-48 shrink-0 overflow-hidden rounded-t-3xl">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-60" alt="Team" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e1324] via-[#0e1324]/50 to-transparent"></div>
-                    <button onClick={onClose} className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white/70 hover:text-white border border-white/5">
-                        <span className="material-symbols-outlined">close</span>
-                    </button>
+                    
+                    <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
+                        <button 
+                            onClick={handleGoHome}
+                            title="Ir al inicio"
+                            className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+                        >
+                            <span className="material-symbols-outlined">home</span>
+                        </button>
+                        <button 
+                            onClick={handleShare}
+                            title="Compartir"
+                            className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+                        >
+                            <span className="material-symbols-outlined">share</span>
+                        </button>
+                        <button 
+                            onClick={onClose}
+                            title="Cerrar"
+                            className="p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-red-500/20 hover:text-red-400 transition-all border border-white/5"
+                        >
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+
                     <div className="absolute bottom-6 left-6 md:left-10">
-                        <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block font-display">Careers</span>
+                        <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block font-display">CARRERAS</span>
                         <h2 className="text-3xl md:text-5xl font-black text-white font-display">Únete al Equipo</h2>
                     </div>
                 </div>

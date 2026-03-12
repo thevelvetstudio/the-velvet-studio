@@ -46,7 +46,7 @@ export const EarningsCalculator: React.FC = () => {
                     {/* Controls */}
                     <div className="flex-1 flex flex-col justify-center relative z-10">
                         <h2 className="text-3xl font-bold text-white mb-2 font-display">Calculadora de Ingresos</h2>
-                        <p className="text-gray-400 mb-8 font-body">Estima tus ganancias potenciales basadas en tu dedicación y nivel de inglés. El cielo es el límite.</p>
+                        <p className="text-stone-400 mb-8 font-body">Estima tus ganancias potenciales basadas en tu dedicación y nivel de inglés. El cielo es el límite.</p>
                         
                         <div className="space-y-8">
                             <div>
@@ -123,9 +123,12 @@ export const EarningsCalculator: React.FC = () => {
 
                         <button 
                             onClick={scrollToApply}
-                            className="mt-8 w-full py-4 rounded-lg bg-white text-secondary font-bold hover:bg-gray-100 transition-colors font-display"
+                            className="mt-8 w-full py-4 rounded-xl bg-gradient-to-r from-primary via-purple-900 to-primary hover:from-primary-light hover:via-purple-800 hover:to-primary-light text-white font-bold text-lg shadow-[0_0_20px_rgba(128,0,32,0.4)] hover:shadow-[0_0_30px_rgba(128,0,32,0.6)] transition-all transform hover:-translate-y-1 relative overflow-hidden group border border-accent/30"
                         >
-                            Comenzar Ahora
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            <span className="relative z-10 font-display uppercase tracking-wider flex items-center justify-center gap-2">
+                                Comenzar Ahora <span className="material-symbols-outlined text-accent text-sm">arrow_forward_ios</span>
+                            </span>
                         </button>
                     </div>
                 </div>

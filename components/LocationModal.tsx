@@ -57,7 +57,7 @@ export const LocationModal: React.FC<LocationModalProps> = ({ isOpen, onClose })
                         <h2 className="text-4xl md:text-6xl font-black text-white font-display drop-shadow-xl">
                             Manizales
                         </h2>
-                        <p className="text-gray-200 font-light text-sm md:text-lg tracking-wide">Colombia • Eje Cafetero</p>
+                        <p className="text-stone-200 font-light text-sm md:text-lg tracking-wide">Colombia • Eje Cafetero</p>
                     </div>
                 </div>
 

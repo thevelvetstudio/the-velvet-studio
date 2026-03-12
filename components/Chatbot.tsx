@@ -162,7 +162,7 @@ export const Chatbot: React.FC = () => {
                             <div className={`max-w-[80%] rounded-2xl p-3 text-sm leading-relaxed ${
                                 msg.role === 'user' 
                                     ? 'bg-primary text-white rounded-tr-none' 
-                                    : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
+                                    : 'bg-white/10 text-stone-200 rounded-tl-none border border-white/5'
                             } ${msg.isError ? 'bg-red-900/50 border-red-500/30' : ''}`}>
                                 {formatMessage(msg.text)}
                             </div>

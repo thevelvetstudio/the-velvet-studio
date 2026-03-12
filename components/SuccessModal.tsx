@@ -52,7 +52,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) =
                 </h2>
 
                 {/* Body Text */}
-                <p className="text-gray-300 font-body text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10">
+                <p className="text-stone-300 font-body text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10">
                     Tu camino hacia el éxito tangible ha comenzado. Nuestro equipo de selección revisará tu perfil y se pondrá en contacto contigo vía WhatsApp en menos de 24 horas.
                 </p>
 

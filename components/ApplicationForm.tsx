@@ -101,7 +101,7 @@ export const ApplicationForm: React.FC = () => {
                     <div className="text-center mb-12">
                         <span className="text-accent text-sm font-bold uppercase tracking-widest mb-3 block font-display">Postulación Exclusiva</span>
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-display">Comienza tu Legado</h2>
-                        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light font-body">
+                        <p className="text-stone-400 text-lg max-w-2xl mx-auto font-light font-body">
                             Da el primer paso hacia una carrera de éxito en la industria webcam. Completa el formulario para iniciar tu proceso de selección.
                         </p>
                     </div>

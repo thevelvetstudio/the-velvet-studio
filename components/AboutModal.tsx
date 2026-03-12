@@ -82,7 +82,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                     <h2 className="text-3xl md:text-5xl font-black text-white font-display drop-shadow-lg">
                         Sobre Nosotros
                     </h2>
-                    <p className="text-gray-300 font-light text-sm md:text-base mt-1">La Evolución de la Industria Webcam</p>
+                    <p className="text-stone-300 font-light text-sm md:text-base mt-1">La Evolución de la Industria Webcam</p>
                 </div>
             </div>
 

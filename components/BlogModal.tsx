@@ -40,7 +40,7 @@ const posts: Post[] = [
         title: "Salud Mental y 'Burnout': Guía de Supervivencia",
         category: "Bienestar",
         date: "Feb 28, 2024",
-        image: "https://images.unsplash.com/photo-1544367563-12123d896889?q=80&w=2070&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop",
         excerpt: "El modelaje webcam es exigente. Descubre técnicas de desconexión digital y manejo emocional para mantener tu energía vibrante y evitar el agotamiento profesional.",
         content: (
             <>

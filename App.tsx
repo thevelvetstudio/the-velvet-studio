@@ -30,6 +30,14 @@ function App() {
     else if (path === '/blog' || modal === 'blog') setIsBlogModalOpen(true);
     else if (path === '/legal' || modal === 'legal') setIsLegalModalOpen(true);
     else if (path === '/ubicacion' || modal === 'location') setIsLocationModalOpen(true);
+    else if (path === '/unete') {
+      setTimeout(() => {
+        const element = document.getElementById('apply');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    }
   }, []);
 
   const closeModal = (setter: React.Dispatch<React.SetStateAction<boolean>>) => {
@@ -180,7 +188,7 @@ function App() {
                     >
                         <span className="material-symbols-outlined text-[18px] sm:text-[20px] lg:text-[24px] leading-none">share</span>
                     </button>
-                    <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[10px] sm:text-xs lg:text-sm font-bold shadow-lg whitespace-nowrap">
+                    <a href="/unete" onClick={(e) => scrollToSection(e, 'apply')} className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 sm:h-8 sm:px-4 lg:h-10 lg:px-6 bg-white text-primary hover:bg-accent hover:text-secondary transition-all duration-300 text-[10px] sm:text-xs lg:text-sm font-bold shadow-lg whitespace-nowrap">
                         <span>Únete</span>
                     </a>
                 </div>
@@ -253,7 +261,7 @@ function App() {
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
-                <a href="#apply" onClick={(e) => scrollToSection(e, 'apply')} className="h-14 px-8 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-lg shadow-[0_0_20px_rgba(128,0,32,0.4)] transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                <a href="/unete" onClick={(e) => scrollToSection(e, 'apply')} className="h-14 px-8 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-lg shadow-[0_0_20px_rgba(128,0,32,0.4)] transition-all transform hover:scale-105 flex items-center justify-center gap-2">
                     Inicia tu Proceso de Selección
                     <span className="material-symbols-outlined">arrow_forward</span>
                 </a>

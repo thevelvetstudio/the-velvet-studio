@@ -212,7 +212,7 @@ export const ApplicationForm: React.FC = () => {
                             <div className="pt-4">
                                 <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide mb-4 block font-display">¿POR QUÉ MEDIO TE ENTERASTE DE NOSOTROS?</label>
                                 <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                                    {['REDES SOCIALES', 'REFERIDA', 'BUSCADOR DE GOOGLE'].map((opt) => (
+                                    {['REDES SOCIALES', 'RECOMENDACIÓN', 'BUSCADOR DE GOOGLE'].map((opt) => (
                                         <label key={opt} className="flex items-center gap-3 cursor-pointer group">
                                             <input 
                                                 type="checkbox" 

@@ -137,9 +137,9 @@ export const ApplicationForm: React.FC = () => {
                                 <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide mb-4 block font-display">Selecciona tu Rol <span className="text-accent">*</span></label>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[
-                                        { val: 'estudio', label: 'Quiero ser modelo de estudio' },
-                                        { val: 'satelite', label: 'Quiero ser modelo satélite' },
-                                        { val: 'monitor', label: 'Quiero ser monitor' }
+                                        { val: 'Estudio', label: 'Quiero ser modelo de estudio' },
+                                        { val: 'Satelite', label: 'Quiero ser modelo satélite' },
+                                        { val: 'Monitor', label: 'Quiero ser monitor' }
                                     ].map((role) => (
                                         <label key={role.val} className="flex items-center gap-3 cursor-pointer group p-4 rounded-xl border border-white/10 bg-background-dark/40 hover:border-accent/40 transition-all">
                                             <input 
@@ -212,7 +212,7 @@ export const ApplicationForm: React.FC = () => {
                             <div className="pt-4">
                                 <label className="text-xs font-bold text-gray-400 ml-1 uppercase tracking-wide mb-4 block font-display">¿POR QUÉ MEDIO TE ENTERASTE DE NOSOTROS?</label>
                                 <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                                    {['REDES SOCIALES', 'RECOMENDACIÓN', 'BUSCADOR DE GOOGLE'].map((opt) => (
+                                    {['Redes Sociales', 'Recomendación', 'Buscador de Google'].map((opt) => (
                                         <label key={opt} className="flex items-center gap-3 cursor-pointer group">
                                             <input 
                                                 type="checkbox" 

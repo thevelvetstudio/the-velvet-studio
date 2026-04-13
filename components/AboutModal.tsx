@@ -231,7 +231,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                     {/* Closing Statement */}
                     <div className="text-center py-8">
                         <p className="text-lg md:text-2xl text-gray-200 font-display italic font-light">
-                            "No buscamos solo visibilidad; buscamos distinción.<br className="hidden md:block"/> <span className="text-accent font-bold not-italic mt-2 inline-block">Bienvenida a la era Velvet.</span>"
+                            "No buscamos solo visibilidad; buscamos distinción"<br className="hidden md:block"/> <span className="text-accent font-bold not-italic mt-2 inline-block">¡Bienvenida a la era Velvet!</span>
                         </p>
                     </div>
 

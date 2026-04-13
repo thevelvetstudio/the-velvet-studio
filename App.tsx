@@ -250,9 +250,11 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl leading-relaxed font-body"
+                className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-4xl leading-relaxed font-body"
             >
-                Gana en dólares con el respaldo de la agencia más exclusiva. Cámaras robóticas IA y calidad 4K para una ventaja competitiva inmediata. Seguridad, privacidad y crecimiento profesional en un solo lugar.
+                Gana en dólares con el respaldo de la agencia más exclusiva.<br />
+                Cámaras robóticas IA y calidad 4K para una ventaja competitiva inmediata.<br />
+                Seguridad, privacidad y crecimiento profesional en un solo lugar.
             </motion.p>
 
             <motion.div 

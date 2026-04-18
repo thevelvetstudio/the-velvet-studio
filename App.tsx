@@ -243,7 +243,7 @@ function App() {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-white mb-6 drop-shadow-2xl font-display"
             >
-                Texto de <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-accent">prueba</span>
+                Tu proyección personal, convertida en <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-accent">éxito tangible</span>
             </motion.h1>
             
             <motion.p 
